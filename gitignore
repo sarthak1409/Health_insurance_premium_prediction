@@ -1,11 +1,43 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
+
+# Virtual environment folders
 .env
 .venv
 env/
 venv/
+
+# Jupyter Notebook checkpoints
 .ipynb_checkpoints/
-artifacts/*.joblib
+
+# Mac system file
 .DS_Store
+
+# VS Code settings (optional)
+.vscode/
+
+# Output artifacts (models, logs, etc.)
+artifacts/
+artifacts/*.joblib
+artifacts/*.pkl
+artifacts/*.sav
+
+# Logs and reports
+*.log
+*.out
+
+# Temporary files
+*.tmp
+*.swp
+
+# Coverage/test files
+htmlcov/
+coverage.xml
+.cache/
+
+# Python egg and build
+*.egg-info/
+build/
+dist/
