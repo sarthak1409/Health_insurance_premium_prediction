@@ -1,7 +1,8 @@
-# 🏥 Health Insurance Premium Predictor
+# 💼 ML Premium Prediction System
 
-This project is a **machine learning-powered web app** that estimates a person's health insurance premium using personal, medical, and lifestyle features.
+This project aims to predict premium amounts based on customer features such as age group, region, and health metrics. It includes multiple Jupyter notebooks exploring different modeling approaches, as well as a streamlined prediction pipeline (`main.py`) for real-world use.
 
+---
 Built with:
 - 🐍 Python
 - 🧠 Scikit-learn
@@ -37,11 +38,22 @@ Built with:
 
 | Model Type | Age Group | Preprocessing |
 |------------|-----------|----------------|
-| Linear Regression / Random Forest | Age ≤ 25 (`model_young`) | StandardScaler |
-| Linear Regression / Random Forest | Age > 25 (`model_rest`) | StandardScaler |
+| Linear Regression | Age ≤ 25 (`model_young`) | StandardScaler |
+| XGBoost Regression | Age > 25 (`model_rest`) | StandardScaler |
 
 ---
+<details>
+<summary><strong>📓 Notebooks Overview</strong></summary>
 
+- [`ml_premium_prediction.ipynb`](notebooks/ml_premium_prediction.ipynb): Baseline model.
+- [`ml_premium_prediction_rest.ipynb`](notebooks/ml_premium_prediction_rest.ipynb): REST group focus.
+- [`ml_premium_prediction_rest_with_gr.ipynb`](notebooks/ml_premium_prediction_rest_with_gr.ipynb): REST + Gradient Boosting.
+- [`ml_premium_prediction_Young.ipynb`](notebooks/ml_premium_prediction_Young.ipynb): Young group model.
+- [`ml_premium_prediction_Young_with_gr.ipynb`](notebooks/ml_premium_prediction_Young_with_gr.ipynb): Young + Gradient Boosting.
+
+</details>
+
+---
 ## 🚀 How to Run
 
 ### 🔧 Install dependencies
@@ -77,3 +89,29 @@ streamlit run app.py
 ## 📦 Outputs
 - Predicted Health Insurance Premium in ₹
 - Personalized UI + prediction result with styling
+  ![Premium Prediction Dashboard](image/main_image.png)
+
+## ⚠️ Disclaimer
+
+This project is intended for educational and demonstration purposes only. The models and predictions made by this system are based on sample data and may not reflect real-world scenarios accurately.
+
+- Do **not** use this model for actual insurance premium calculations without thorough validation.
+- The dataset used in this project is **not included** in the repository due to privacy or licensing constraints.
+- The project does not collect or use any personal or sensitive information.
+- The author assumes no responsibility for misuse or misinterpretation of the results.
+
+Use responsibly and always validate with real-world domain expertise.
+## 🧠 Analysis  
+Check [analysis.md](analysis.md) for a full breakdown of EDA and modeling insights.
+
+---
+
+## 🙋‍♂️ Author  
+**Sarthak Maddi**  
+Feel free to connect or raise issues for collaboration.
+
+---
+
+## 📄 License  
+This project is open-source and free to use under the MIT License.
+
