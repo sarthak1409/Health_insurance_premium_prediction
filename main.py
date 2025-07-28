@@ -1,12 +1,8 @@
-# codebasics ML course: codebasics.io, all rights reserved
-
 import streamlit as st
 from predcition_helper1 import predict
 
-# Page configuration
 st.set_page_config(page_title="Health Insurance Predictor", layout="wide")
 
-# Custom CSS styling
 st.markdown("""
     <style>
         .main {
@@ -33,16 +29,22 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# App title and intro
+instruction = st.sidebar.selectbox("📘 Instructions", ["How to use this app"])
+if instruction:
+    st.sidebar.markdown("""
+    - Fill out all the fields on the form carefully.
+    - Ensure that Employment Status is selected; it cannot be blank.
+    - Click on **'💰 Predict Premium'** to get your estimated health insurance cost.
+    """)
+
 st.title("🏥 Health Insurance Cost Predictor")
 st.caption("Get a quick estimate of your health insurance premium using key personal and lifestyle factors.")
 
-# Input form
 with st.form("insurance_form"):
     st.subheader("🔢 Basic Information")
     col1, col2, col3 = st.columns(3)
     with col1:
-        age = st.number_input('Age', min_value=18, max_value=100, step=1, help="Enter your age (18–100)")
+        age = st.number_input('Age', min_value=18, max_value=100, step=1)
     with col2:
         number_of_dependants = st.number_input('Number of Dependants', min_value=0, max_value=20, step=1)
     with col3:
@@ -75,11 +77,10 @@ with st.form("insurance_form"):
     with col12:
         medical_history = st.selectbox('Medical History', [
             'No Disease', 'Diabetes', 'High blood pressure', 'Diabetes & High blood pressure',
-            'Thyroid', 'Heart disease', 'High blood pressure & Heart disease', 
+            'Thyroid', 'Heart disease', 'High blood pressure & Heart disease',
             'Diabetes & Thyroid', 'Diabetes & Heart disease'
         ])
 
-    # Submit button
     submitted = st.form_submit_button("💰 Predict Premium")
 
     if submitted:
@@ -104,7 +105,6 @@ with st.form("insurance_form"):
 
                 prediction = predict(input_dict)
 
-                # Enhanced premium display
                 button_bg = "#144272"
                 highlight_bg = "#DDF2FD"
                 text_color = "#0A2647"
