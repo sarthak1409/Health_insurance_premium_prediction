@@ -3,6 +3,11 @@
 This project aims to predict premium amounts based on customer features such as age group, region, and health metrics. It includes multiple Jupyter notebooks exploring different modeling approaches, as well as a streamlined prediction pipeline (`main.py`) for real-world use.
 
 ---
+## 🔗 Live Demo
+
+You can try the **Health Insurance Premium Predictor** app here:  
+👉 [Health Insurance Premium App](https://healthinusrancepremiumsarthakmaddi.streamlit.app/)
+---
 Built with:
 - 🐍 Python
 - 🧠 Scikit-learn
